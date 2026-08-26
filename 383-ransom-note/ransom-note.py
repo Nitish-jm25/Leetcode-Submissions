@@ -1,3 +1,6 @@
-class Solution:
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        return not Counter(ransomNote) - Counter(magazine)
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        for c in set(ransomNote):
+            if magazine.count(c) < ransomNote.count(c):
+                return False
+        return True
