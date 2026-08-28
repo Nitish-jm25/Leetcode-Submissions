@@ -1,8 +1,7 @@
 class Solution(object):
     def moveZeroes(self, nums):
         k=0
-        n=len(nums)
-        for i in range(n):
+        for i in range(len(nums)):
             if nums[i]!=0:
                 nums[i],nums[k]=nums[k],nums[i]
                 k+=1
