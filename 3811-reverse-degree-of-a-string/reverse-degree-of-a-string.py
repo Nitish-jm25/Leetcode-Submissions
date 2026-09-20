@@ -1,7 +1,3 @@
-class Solution:
-    def reverseDegree(self, s: str) -> int:
-        sum = 0
-        for i in range(len(s)):
-            rev_val = 123 - ord(s[i])
-            sum += (i+1)*rev_val
-        return sum
+class Solution(object):
+    def reverseDegree(self, s):
+        return sum((i+1)*(26-(ord(c)-ord('a'))) for i,c in enumerate(s))
