@@ -1,7 +1,5 @@
-class Solution:
-    def missingNumber(self, nums: list[int]) -> int:
+class Solution(object):
+    def missingNumber(self, nums):
         n=len(nums)
-        for i in range(n+1):
-            if i in nums:
-                continue
-            return i
+        total=n*(n+1)//2
+        return total-sum(nums)
