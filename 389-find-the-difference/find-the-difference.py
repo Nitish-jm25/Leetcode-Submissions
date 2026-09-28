@@ -1,9 +1,8 @@
-class Solution:
-    def findTheDifference(self, s: str, t: str) -> str:
-        tsort = sorted(t)
-        ssort = sorted(s)
-
-        i=0
-        while i < len(ssort) and ssort[i]==tsort[i]:
-            i+=1
-        return tsort[i]
+class Solution(object):
+    def findTheDifference(self, s, t):
+        sum = 0
+        for c in s:
+            sum -= ord(c)
+        for c in t:
+            sum += ord(c)
+        return chr(sum)
