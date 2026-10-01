@@ -1,14 +1,14 @@
-class Solution(object):
-    def isValid(self, s):
-        stack=[]
-
-        pairs={
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        pairs = {
             "}":"{",
             "]":"[",
             ")":"("
         }
+
         for ch in s:
-            if ch in "[{(":
+            if ch in "({[":
                 stack.append(ch)
             else:
                 if not stack or stack[-1]!=pairs[ch]:
